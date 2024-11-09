@@ -1,0 +1,15 @@
+nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: linear-gradient(to left, #e7b532, #fff);
+    .logo {
+        height: 4rem;
+        width: auto;
+    }
+    .title {
+        font-size: 2rem;
+    }
+}
