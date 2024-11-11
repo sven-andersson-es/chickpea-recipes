@@ -3,10 +3,10 @@ import logo from "../assets/chickpea.png"
 
 function Navbar () {
     return (
-        <nav>
+        <header>
             <a href=""><img className="logo" src={logo} alt="Chickpea Recipes Logo" /></a>
             <div className="title">Chickpea Recipes</div>
-        </nav>
+        </header>
     )
 }
 
