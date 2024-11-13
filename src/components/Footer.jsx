@@ -2,7 +2,9 @@ import "./Footer.css"
 
 function Footer () {
     return (
-        <div>Footer</div>
+        <footer>
+        <a className="link" href="https://github.com/sven-andersson-es/chickpea-recipes.git">Chickpea recipes Github </a>
+        </footer>
     )
 }
 
