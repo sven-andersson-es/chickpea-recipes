@@ -6,4 +6,17 @@
 
 #root{
   min-height: 100vh;
+  main {
+    min-height: 70vh;
+    display: flex;
+    nav {
+      width: 10%;
+      min-width: 8rem;
+    }
+    #main {
+      width: 90%;
+      border: 1px solid red;
+    }
+  }
+
 }

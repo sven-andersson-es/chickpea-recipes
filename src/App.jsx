@@ -11,6 +11,7 @@ function App() {
     <Navbar/>
     <main>
       <Sidebar/>
+      <div id="main"></div>
     </main>
     <Footer/>
     </>
