@@ -1,3 +1,5 @@
+import "./RecipeCard.css"
+
 function RecipeCard(props) {
     const {eachRecipe: {id,title,imageUrl,servings,ingredients,cookingInstructions,done} } = props;
     return (
@@ -9,6 +11,7 @@ function RecipeCard(props) {
             <p>{ingredients}</p>
             <p>{cookingInstructions}</p>
             <p>{done ? "✅" : "❌ "}</p>
+            <button>delete</button>
         </li>
     )
 }
