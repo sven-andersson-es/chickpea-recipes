@@ -4,6 +4,11 @@ import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
 import Footer from './components/Footer'
 import RecipeList from './components/recipeList'
+import { Routes, Route } from 'react-router-dom'
+import AboutPage from './pages/AboutPage'
+import DashboardPage from './pages/DashboardPage'
+import ItemsDetailsPage from './pages/ItemDetailsPage'
+import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
 
@@ -13,7 +18,12 @@ function App() {
     <main>
       <Sidebar/>
       <div id="main">
-        <RecipeList />
+      <Routes>
+        <Route path='/' element={<DashboardPage/>} />
+        <Route path='/about' element={<AboutPage/>} />
+        <Route path='/recipes/:recipeId' element={<ItemsDetailsPage/>} />
+        <Route path='*' element={<NotFoundPage/>} />
+      </Routes>
       </div>
     </main>
     <Footer/>
