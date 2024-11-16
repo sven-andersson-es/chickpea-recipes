@@ -6,7 +6,12 @@
 
 #root{
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   main {
+    flex: 1;
     min-height: 70vh;
     display: flex;
     nav {
@@ -16,6 +21,7 @@
     #main {
       width: 90%;
       border: 1px solid red;
+      padding: 2rem;
     }
   }
 
