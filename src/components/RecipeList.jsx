@@ -1,5 +1,6 @@
 import recipeArray from "../assets/data/recipes.json"
 import RecipeCard from "./RecipeCard"
+import "./RecipeList.css"
 
 function RecipeList() {
     
