@@ -20,7 +20,7 @@
     }
     #main {
       width: 90%;
-      border: 1px solid red;
+      background-color: #fdf6e9;
       padding: 2rem;
     }
   }
