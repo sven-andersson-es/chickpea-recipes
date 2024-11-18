@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
 import Footer from './components/Footer'
@@ -7,8 +6,10 @@ import RecipeList from './components/recipeList'
 import { Routes, Route } from 'react-router-dom'
 import AboutPage from './pages/AboutPage'
 import DashboardPage from './pages/DashboardPage'
-import ItemsDetailsPage from './pages/ItemDetailsPage'
+import ItemDetailsPage from './pages/ItemDetailsPage'
 import NotFoundPage from './pages/NotFoundPage'
+import recipesArray from "./assets/data/recipes.json"
+
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
       <Routes>
         <Route path='/' element={<DashboardPage/>} />
         <Route path='/about' element={<AboutPage/>} />
-        <Route path='/recipes/:recipeId' element={<ItemsDetailsPage/>} />
+        <Route path='/recipes/:recipeId' element={<ItemDetailsPage recipes={recipesArray}/>} />
         <Route path='*' element={<NotFoundPage/>} />
       </Routes>
       </div>
