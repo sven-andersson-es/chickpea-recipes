@@ -1,4 +1,5 @@
 import "./RecipeCard.css"
+import { Link } from "react-router-dom";
 
 function RecipeCard(props) {
     const {eachRecipe: {id,title,imageUrl,servings,ingredients,cookingInstructions,done} } = props;
@@ -11,6 +12,7 @@ function RecipeCard(props) {
             <p>{ingredients}</p>
             <p>{cookingInstructions}</p>
             <p>{done ? "✅" : "❌ "}</p>
+            <Link to={`/recipes/${id}`}>Details</Link>
             <button>delete</button>
         </li>
     )
