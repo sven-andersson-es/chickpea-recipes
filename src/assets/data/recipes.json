@@ -2,7 +2,7 @@
     {
         "id": 1,
         "title": "Chickpea Salad",
-        "imageUrl": "https://example.com/chickpea_salad.jpg",
+        "imageUrl": "https://www.testar.dev/ironhack/react-mini-project/images/chickpea_salad.jpg",
         "servings": 4,
         "ingredients": ["Chickpea", "Cucumber", "Tomato", "Olive Oil", "Lemon"],
         "cookingInstructions": "Mix all ingredients in a bowl and serve chilled.",
@@ -11,7 +11,7 @@
     {
         "id": 2,
         "title": "Chickpea Curry",
-        "imageUrl": "https://example.com/chickpea_curry.jpg",
+        "imageUrl": "https://www.testar.dev/ironhack/react-mini-project/images/chickpea_curry.jpg",
         "servings": 6,
         "ingredients": ["Chickpea", "Coconut Milk", "Onion", "Garlic", "Spices"],
         "cookingInstructions": "Cook onions and garlic, add spices and chickpeas, simmer with coconut milk.",
@@ -20,7 +20,7 @@
     {
         "id": 3,
         "title": "Chickpea Stew",
-        "imageUrl": "https://example.com/chickpea_stew.jpg",
+        "imageUrl": "https://www.testar.dev/ironhack/react-mini-project/images/chickpea_stew.jpg",
         "servings": 4,
         "ingredients": ["Chickpea", "Carrot", "Potato", "Onion", "Tomato Sauce"],
         "cookingInstructions": "Sauté onions, add vegetables and chickpeas, cook with tomato sauce until tender.",
@@ -29,7 +29,7 @@
     {
         "id": 4,
         "title": "Chickpea Hummus",
-        "imageUrl": "https://example.com/chickpea_hummus.jpg",
+        "imageUrl": "https://www.testar.dev/ironhack/react-mini-project/images/chickpea_hummus.jpg",
         "servings": 8,
         "ingredients": ["Chickpea", "Tahini", "Garlic", "Lemon Juice", "Olive Oil"],
         "cookingInstructions": "Blend all ingredients until smooth and creamy.",
@@ -38,7 +38,7 @@
     {
         "id": 5,
         "title": "Chickpea Burger",
-        "imageUrl": "https://example.com/chickpea_burger.jpg",
+        "imageUrl": "https://www.testar.dev/ironhack/react-mini-project/images/chickpea_burger.jpg",
         "servings": 4,
         "ingredients": ["Chickpea", "Breadcrumbs", "Onion", "Spices", "Lettuce"],
         "cookingInstructions": "Mash chickpeas, mix with other ingredients, form patties, and pan-fry.",
@@ -47,7 +47,7 @@
     {
         "id": 6,
         "title": "Chana Masala",
-        "imageUrl": "https://example.com/chana_masala.jpg",
+        "imageUrl": "https://www.testar.dev/ironhack/react-mini-project/images/chana_masala.jpg",
         "servings": 5,
         "ingredients": ["Chickpea", "Onion", "Tomato", "Ginger", "Spices"],
         "cookingInstructions": "Cook onions and ginger, add spices and tomatoes, blend in chickpeas.",
@@ -56,7 +56,7 @@
     {
         "id": 7,
         "title": "Chickpea Soup",
-        "imageUrl": "https://example.com/chickpea_soup.jpg",
+        "imageUrl": "https://www.testar.dev/ironhack/react-mini-project/images/chickpea_soup.jpg",
         "servings": 4,
         "ingredients": ["Chickpea", "Celery", "Carrot", "Onion", "Broth"],
         "cookingInstructions": "Simmer all ingredients in broth until vegetables are tender.",
@@ -65,7 +65,7 @@
     {
         "id": 8,
         "title": "Chickpea Wrap",
-        "imageUrl": "https://example.com/chickpea_wrap.jpg",
+        "imageUrl": "https://www.testar.dev/ironhack/react-mini-project/images/chickpea_wrap.jpg",
         "servings": 2,
         "ingredients": ["Chickpea", "Lettuce", "Tomato", "Tortilla", "Hummus"],
         "cookingInstructions": "Spread hummus on tortilla, layer with other ingredients, and roll up.",

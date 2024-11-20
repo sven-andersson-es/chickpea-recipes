@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import "./ItemDetailsPage.css";
 
 function ItemsDetailsPage(props) {
 	// const {eachRecipe: {id,title,imageUrl,servings,ingredients,cookingInstructions,done} } = props;
@@ -8,7 +9,7 @@ function ItemsDetailsPage(props) {
 	const params = useParams();
 	console.log("params.recipeId", params.recipeId);
 
-    //Important, in our json we have the id as typeof number, which created problems - Ask Marcel!
+	//Important, in our json we have the id as typeof number, which created problems - Ask Marcel!
 	const recipeToDisplay = allRecipes.find(
 		(recipe) => recipe.id.toString() === params.recipeId
 	);
@@ -17,13 +18,22 @@ function ItemsDetailsPage(props) {
 
 	return (
 		<div className="details-page-card">
-			<p>{recipeToDisplay.id}</p>
-			<p>{recipeToDisplay.title}</p>
-			<p>{recipeToDisplay.imageUrl}</p>
-			<p>{recipeToDisplay.servings}</p>
-			<p>{recipeToDisplay.ingredients}</p>
+			<h1>{recipeToDisplay.title}</h1>
+			<div className="image">
+				<img src={recipeToDisplay.imageUrl} alt="" />
+			</div>
+			<p>Serves {recipeToDisplay.servings} people</p>
+			<h3>Ingredients</h3>
+			<ul>{
+				recipeToDisplay.ingredients.map((ingredient,index) => {
+					return <li key={index}>{ingredient	}</li>
+				})
+			
+			}
+			</ul>
+			<h3>Cooking instructions</h3>
 			<p>{recipeToDisplay.cookingInstructions}</p>
-			<p>{recipeToDisplay.done ? "✅" : "❌ "}</p>
+			<p>Cooked: {recipeToDisplay.done ? "✅" : "❌ "}</p>
 			<button>delete</button>
 		</div>
 	);

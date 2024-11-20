@@ -1,0 +1,23 @@
+.details-page-card {
+    .image {
+        height: 15rem;
+        margin-bottom: 1rem;
+        img {
+            height: 15rem;
+            width: 30rem;
+            object-fit: cover;
+        }
+    }
+    ul {
+        margin-left: 0.5rem;
+        li {
+            list-style-position: inside;
+        }
+    }
+    h1 {
+        margin-bottom: 1.5rem;
+    }
+    h3 {
+        margin: 1.2rem 0 0.5rem
+    }
+}
