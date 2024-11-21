@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inika:wght@400;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -5,11 +8,47 @@
 }
 
 #root{
+  font-family: "Crimson Text", serif;
+  font-weight: 500;
+  font-optical-sizing: auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
+  h1,h2,h3,h4,h5,h6 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 600;
+  }
+  p,ul {
+    font-size: 18px;
+  }
+  button, .btn {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1rem;
+    height: auto;
+    text-decoration: none;
+    padding: 0.6rem 0.8rem 0.4rem;
+    border-radius: 0.3rem;
+    background-color: #d8d8d8;
+    border: none;
+    color: #222;
+    cursor: pointer;
+    &.delete {
+      color: rgb(245, 15, 15);
+    }
+    &:hover {
+      box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+    }
+  }
+  .mb {
+    margin-bottom: 0.5rem;
+  }
+  .mb-1 {
+    margin-bottom: 1rem;
+  }
+  .mb-2 {
+    margin-bottom: 2rem;
+  }
   main {
     flex: 1;
     min-height: 70vh;
