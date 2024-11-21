@@ -1,0 +1,25 @@
+.recipe-form {
+    padding: 1rem;
+    background-color: white;
+    margin-bottom: 2rem;
+    border-radius: 0.4rem;
+    box-shadow: 0px 2px 4px 0px #0000000a, 0px 1px 6px 0px #00000005;
+    form {
+        display: grid;
+        grid-gap: 1.5rem;
+        grid-template-columns: repeat(3,1fr);
+        label {
+            display: block;
+            font-weight: 600;
+        }
+        input[type="text"], 
+        input[type="url"], 
+        input[type="number"] {
+            width: 100%;
+            padding: 0.1rem 0.3rem;
+            height: 2rem;
+            border-radius: 0.2rem;
+            border: 1px solid #222;
+        }
+    }
+}
