@@ -1,9 +1,9 @@
 import RecipeList from "../components/recipeList"
 
-function DashboardPage (props) {
+function DashboardPage () {
     return (
         <>
-           <RecipeList recipes={props.recipes}/> 
+           <RecipeList/> 
         </>
     )
 }
