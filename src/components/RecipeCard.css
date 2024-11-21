@@ -9,7 +9,7 @@
         margin-bottom: 0.5rem;
     }
 	.image {
-
+        display: block;
         height: 9rem;
         margin-bottom: 0.5rem;
     }

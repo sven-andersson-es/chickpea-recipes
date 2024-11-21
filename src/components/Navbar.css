@@ -11,5 +11,7 @@ header {
     }
     .title {
         font-size: 2rem;
+        font-family: "Josefin Sans", sans-serif;
+
     }
 }

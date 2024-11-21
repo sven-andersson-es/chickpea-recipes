@@ -12,21 +12,22 @@ function RecipeCard(props) {
 			cookingInstructions,
 			done,
 		},
+        deleteRecipe
 	} = props;
 	return (
 		<li className="recipe-card">
 			<div className="top">
 				<h3>{title}</h3>
-				<div className="image">
+				<Link to={`/recipes/${id}`} className="image mb">
 					<img src={imageUrl} alt="" />
-				</div>
-				<p>Serves: {servings} people</p>
+				</Link>
+				<p className="mb">Serves: {servings} people</p>
 				
 				<p>Cooked: {done ? "✅" : "❌ "}</p>
 			</div>
 			<div className="bottom">
-				<a href="">Delete</a>
-				<Link to={`/recipes/${id}`}>Details</Link>
+				<button onClick={() => {deleteRecipe(id)} } className="delete">Delete</button>
+				<Link to={`/recipes/${id}`} className="btn">Details</Link>
 			</div>
 		</li>
 	);

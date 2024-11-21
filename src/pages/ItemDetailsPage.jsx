@@ -22,9 +22,9 @@ function ItemsDetailsPage(props) {
 			<div className="image">
 				<img src={recipeToDisplay.imageUrl} alt="" />
 			</div>
-			<p>Serves {recipeToDisplay.servings} people</p>
+			<p className="mb-2">Serves {recipeToDisplay.servings} people</p>
 			<h3>Ingredients</h3>
-			<ul>{
+			<ul className="mb-2">{
 				recipeToDisplay.ingredients.map((ingredient,index) => {
 					return <li key={index}>{ingredient	}</li>
 				})
@@ -32,9 +32,9 @@ function ItemsDetailsPage(props) {
 			}
 			</ul>
 			<h3>Cooking instructions</h3>
-			<p>{recipeToDisplay.cookingInstructions}</p>
+			<p className="mb-1">{recipeToDisplay.cookingInstructions}</p>
 			<p>Cooked: {recipeToDisplay.done ? "✅" : "❌ "}</p>
-			<button>delete</button>
+			
 		</div>
 	);
 }
