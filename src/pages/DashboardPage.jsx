@@ -1,9 +1,9 @@
 import RecipeList from "../components/recipeList"
 
-function DashboardPage () {
+function DashboardPage ({recipes,setRecipes,deleteRecipe}) {
     return (
         <>
-           <RecipeList/> 
+           <RecipeList  recipes={recipes} setRecipes={setRecipes} deleteRecipe={deleteRecipe}/> 
         </>
     )
 }

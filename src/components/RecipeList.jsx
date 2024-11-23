@@ -1,16 +1,10 @@
 import { useState } from "react";
-import recipeArray from "../assets/data/recipes.json";
 import RecipeCard from "./RecipeCard";
 import "./RecipeList.css";
 import AddRecipeForm from "./AddRecipeForm";
 
-function RecipeList() {
-	const [recipes, setRecipes] = useState(recipeArray);
-
-	const deleteRecipe = (id) => {
-		const updatedArray = [...recipes];
-		setRecipes(updatedArray.filter((recipe) => recipe.id !== id));
-	};
+function RecipeList({recipes,setRecipes,deleteRecipe}) {
+	
 
 	return (
 		<>
