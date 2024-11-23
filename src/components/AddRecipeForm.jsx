@@ -2,11 +2,11 @@ import { useState } from "react";
 import "./AddRecipeForm.css";
 
 function AddRecipeForm({setRecipes, recipes}) {
-	const [title, setTitle] = useState("")
-	const [imageUrl, setImageUrl] = useState("")
-	const [servings, setServings] = useState(0)
-	const [ingredients, setIngredients] = useState([])
-	const [cookingInstructions, setCookingInstructions] = useState("")
+	const [title, setTitle] = useState("Chickpea Perrito")
+	const [imageUrl, setImageUrl] = useState("https://www.purina.es/sites/default/files/styles/ttt_image_510/public/2024-02/sitesdefaultfilesstylessquare_medium_440x440public2022-08Rottweiler2.jpg")
+	const [servings, setServings] = useState(null)
+	const [ingredients, setIngredients] = useState(["chickpea","bread"])
+	const [cookingInstructions, setCookingInstructions] = useState("Cook it all together")
 	const [done, setDone] = useState (false)
 
 
@@ -23,8 +23,10 @@ function AddRecipeForm({setRecipes, recipes}) {
 	}
 
 	const handleSubmit = (e) => {
-		e.prevenDefault();
+		e.preventDefault();
+		const id = Math.floor(Math.random() * 9999)
 		const newRecipe = {
+			id,
 			title,
 			imageUrl,
 			servings,
@@ -32,8 +34,12 @@ function AddRecipeForm({setRecipes, recipes}) {
 			cookingInstructions,
 			done
 		}
+		console.log(newRecipe);
+		
 		addRecipes(newRecipe);
+		
 	}
+	console.log(recipes);
 
 		return (
 		<div className="recipe-form">
