@@ -8,7 +8,7 @@ function RecipeList({recipes,setRecipes,deleteRecipe}) {
 
 	return (
 		<>
-			<AddRecipeForm />
+			<AddRecipeForm setRecipes={setRecipes} recipes={recipes}/>
 			<ul className="recipe-list">
 				{recipes.map((recipe, index) => {
 					return (
