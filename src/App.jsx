@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import recipeArray from "./assets/data/recipes.json";
+
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
 import Footer from './components/Footer'
@@ -12,6 +14,13 @@ import recipesArray from "./assets/data/recipes.json"
 
 
 function App() {
+  const [recipes, setRecipes] = useState(recipeArray);
+
+	const deleteRecipe = (id) => {
+		const updatedArray = [...recipes];
+		setRecipes(updatedArray.filter((recipe) => recipe.id !== id));
+	};
+
 
   return (
     <>
@@ -20,7 +29,7 @@ function App() {
       <Sidebar/>
       <div id="main">
       <Routes>
-        <Route path='/' element={<DashboardPage/>} />
+        <Route path='/' element={<DashboardPage recipes={recipes} setRecipes={setRecipes} deleteRecipe={deleteRecipe}/>} />
         <Route path='/about' element={<AboutPage/>} />
         <Route path='/recipes/:recipeId' element={<ItemDetailsPage recipes={recipesArray}/>} />
         <Route path='*' element={<NotFoundPage/>} />
