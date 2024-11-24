@@ -4,17 +4,17 @@ import "./ItemDetailsPage.css";
 function ItemsDetailsPage(props) {
 	// const {eachRecipe: {id,title,imageUrl,servings,ingredients,cookingInstructions,done} } = props;
 	const allRecipes = props.recipes;
-	console.log("allRecipes", allRecipes);
+	//console.log("allRecipes", allRecipes);
 
 	const params = useParams();
-	console.log("params.recipeId", params.recipeId);
+	//console.log("params.recipeId", params.recipeId);
 
 	//Important, in our json we have the id as typeof number, which created problems - Ask Marcel!
 	const recipeToDisplay = allRecipes.find(
 		(recipe) => recipe.id.toString() === params.recipeId
 	);
 
-	console.log(recipeToDisplay);
+	//console.log(recipeToDisplay);
 
 	return (
 		<div className="details-page-card">
