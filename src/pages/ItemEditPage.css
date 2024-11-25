@@ -1,0 +1,13 @@
+.back-link {
+    color: #222;
+    display: block;
+    margin: 0 0 1rem;
+    position: relative;
+    padding-left: 20px;
+    &:before{
+        content: "<";
+        position:absolute;
+        left: 0;
+        bottom: 2px;
+    }
+}

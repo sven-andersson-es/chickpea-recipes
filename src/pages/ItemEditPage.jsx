@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 // import "./AddRecipeForm.css";
 import IngredientsInput from "../components/IngredientsInput";
+import "./ItemEditPage.css"
 
 function ItemEditPage({ setRecipes, recipes }) {
     
@@ -17,7 +18,8 @@ function ItemEditPage({ setRecipes, recipes }) {
 		(recipe) => recipe.id.toString() === params.recipeId
 	);
     
-    
+    const [saved, setSaved] = useState(false);
+
 
     const [title, setTitle] = useState(recipeToDisplay.title);
 	const [imageUrl, setImageUrl] = useState(recipeToDisplay.imageUrl);
@@ -36,9 +38,14 @@ function ItemEditPage({ setRecipes, recipes }) {
 	const updateRecipes = () => {
 		const editedRecipes = [...recipes];
 		setRecipes(editedRecipes);
+		setSaved(true);
+		setTimeout(() => {
+			setSaved(false);
+		}, 2000);
         console.log(editedRecipes);
         
 	};
+
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -80,8 +87,9 @@ function ItemEditPage({ setRecipes, recipes }) {
 
 	return (
         <>
-        <Link to={`/recipes/${recipeToDisplay.id}`} className="">Go back</Link>
+        <Link to={`/recipes/${recipeToDisplay.id}`} className="back-link">Go back</Link>
 		<div className="recipe-form">
+		{saved && <div className="saved">Recipe Saved</div>}
 			<form onSubmit={handleSubmit}>
 				<div className="form-group">
 					<label htmlFor="title">Title</label>
