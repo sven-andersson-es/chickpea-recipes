@@ -1,5 +1,7 @@
 import { useParams } from "react-router-dom";
 import "./ItemDetailsPage.css";
+import { Link } from "react-router-dom";
+
 
 function ItemsDetailsPage(props) {
 	// const {eachRecipe: {id,title,imageUrl,servings,ingredients,cookingInstructions,done} } = props;
@@ -34,7 +36,7 @@ function ItemsDetailsPage(props) {
 			<h3>Cooking instructions</h3>
 			<p className="mb-1">{recipeToDisplay.cookingInstructions}</p>
 			<p>Cooked: {recipeToDisplay.done ? "✅" : "❌ "}</p>
-			
+			<Link to={`/recipes/edit/${recipeToDisplay.id}`} className="btn">Edit</Link>
 		</div>
 	);
 }

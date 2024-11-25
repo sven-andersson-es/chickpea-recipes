@@ -1,16 +1,30 @@
 import { useState } from "react";
-import "./AddRecipeForm.css";
-import IngredientsInput from "./IngredientsInput";
+import { Link, useParams } from "react-router-dom";
+// import "./AddRecipeForm.css";
+import IngredientsInput from "../components/IngredientsInput";
 
-function AddRecipeForm({ setRecipes, recipes }) {
-	console.log(setRecipes);
-	
-	const [title, setTitle] = useState("");
-	const [imageUrl, setImageUrl] = useState("");
-	const [servings, setServings] = useState(0);
-	const [ingredients, setIngredients] = useState([]);
-	const [cookingInstructions, setCookingInstructions] = useState("");
-	const [done, setDone] = useState(false);
+function ItemEditPage({ setRecipes, recipes }) {
+    
+    // const {eachRecipe: {id,title,imageUrl,servings,ingredients,cookingInstructions,done} } = props;
+	const allRecipes = recipes;
+	//console.log("allRecipes", allRecipes);
+
+	const params = useParams();
+	//console.log("params.recipeId", params.recipeId);
+
+	//Important, in our json we have the id as typeof number, which created problems - Ask Marcel!
+	const recipeToDisplay = allRecipes.find(
+		(recipe) => recipe.id.toString() === params.recipeId
+	);
+    
+    
+
+    const [title, setTitle] = useState(recipeToDisplay.title);
+	const [imageUrl, setImageUrl] = useState(recipeToDisplay.imageUrl);
+	const [servings, setServings] = useState(recipeToDisplay.servings);
+	const [ingredients, setIngredients] = useState(recipeToDisplay.ingredients);
+	const [cookingInstructions, setCookingInstructions] = useState(recipeToDisplay.cookingInstructions);
+	const [done, setDone] = useState(recipeToDisplay.done);
 
 	const handleTitle = (e) => setTitle(e.target.value);
 	const handleImageUrl = (e) => setImageUrl(e.target.value);
@@ -19,15 +33,24 @@ function AddRecipeForm({ setRecipes, recipes }) {
 		setCookingInstructions(e.target.value);
 	const handleDone = (e) => setDone(e.target.checked);
 
-	const addRecipes = (newRecipe) => {
-		const updateRecipes = [...recipes, newRecipe];
-		setRecipes(updateRecipes);
+	const updateRecipes = () => {
+		const editedRecipes = [...recipes];
+		setRecipes(editedRecipes);
+        console.log(editedRecipes);
+        
 	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		const id = Math.floor(Math.random() * 9999);
-		const newRecipe = {
+        
+        recipeToDisplay.title = title
+        recipeToDisplay.imageUrl = imageUrl
+        recipeToDisplay.servings = servings
+        recipeToDisplay.ingredients = ingredients
+        recipeToDisplay.cookingInstructions = cookingInstructions
+        recipeToDisplay.done = done
+
+		/* const editedRecipe = {
 			id,
 			title,
 			imageUrl,
@@ -35,22 +58,29 @@ function AddRecipeForm({ setRecipes, recipes }) {
 			ingredients,
 			cookingInstructions,
 			done,
-		};
-		//console.log(newRecipe);
+		}; */
+		//console.log(editedRecipe);
 
-		addRecipes(newRecipe);
+        console.log(recipeToDisplay);
+        
+
+		updateRecipes();
+
+        
 
 		//Clear the form
-		setTitle("");
+		/* setTitle("");
 		setImageUrl("");
 		setServings(4);
 		setIngredients([]);
 		setCookingInstructions("");
-		setDone(false);
+		setDone(false); */
 	};
 	//console.log(recipes);
 
 	return (
+        <>
+        <Link to={`/recipes/${recipeToDisplay.id}`} className="">Go back</Link>
 		<div className="recipe-form">
 			<form onSubmit={handleSubmit}>
 				<div className="form-group">
@@ -117,7 +147,8 @@ function AddRecipeForm({ setRecipes, recipes }) {
 				</div>
 			</form>
 		</div>
+        </>
 	);
 }
 
-export default AddRecipeForm;
+export default ItemEditPage;
