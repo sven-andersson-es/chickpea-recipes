@@ -10,6 +10,7 @@ import AboutPage from './pages/AboutPage'
 import DashboardPage from './pages/DashboardPage'
 import ItemDetailsPage from './pages/ItemDetailsPage'
 import NotFoundPage from './pages/NotFoundPage'
+import ItemEditPage from './pages/ItemEditPage'
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Route path='/' element={<DashboardPage recipes={recipes} setRecipes={setRecipes} deleteRecipe={deleteRecipe}/>} />
         <Route path='/about' element={<AboutPage/>} />
         <Route path='/recipes/:recipeId' element={<ItemDetailsPage recipes={recipes}/>} />
+        <Route path='/recipes/edit/:recipeId' element={<ItemEditPage recipes={recipes} setRecipes={setRecipes}/> } />
         <Route path='*' element={<NotFoundPage/>} />
       </Routes>
       </div>
