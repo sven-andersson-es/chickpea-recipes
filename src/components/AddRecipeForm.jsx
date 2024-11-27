@@ -3,7 +3,7 @@ import "./AddRecipeForm.css";
 import IngredientsInput from "./IngredientsInput";
 
 function AddRecipeForm({ setRecipes, recipes }) {
-	console.log(setRecipes);
+	//console.log(setRecipes);
 	
 	const [title, setTitle] = useState("");
 	const [imageUrl, setImageUrl] = useState("");
