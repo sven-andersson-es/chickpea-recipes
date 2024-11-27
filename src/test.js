@@ -2,7 +2,7 @@
     // Get the value of the input
     const value = "  hep hep hep    ";
 
-    console.log(value);
+    //console.log(value);
     
     /* // If the value is empty, return
     if (!value.trim()) return;
