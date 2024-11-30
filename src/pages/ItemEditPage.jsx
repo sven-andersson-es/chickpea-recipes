@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 // import "./AddRecipeForm.css";
 import IngredientsInput from "../components/IngredientsInput";
-import "./ItemEditPage.css";
+import { useNavigate } from "react-router-dom";
+
 
 function ItemEditPage({ setRecipes, recipes }) {
   // const {eachRecipe: {id,title,imageUrl,servings,ingredients,cookingInstructions,done} } = props;
@@ -16,6 +17,8 @@ function ItemEditPage({ setRecipes, recipes }) {
   const recipeToDisplay = allRecipes.find(
     (recipe) => recipe.id.toString() === params.recipeId
   );
+
+  const navigate = useNavigate()
 
   const [saved, setSaved] = useState(false);
 
@@ -43,6 +46,9 @@ function ItemEditPage({ setRecipes, recipes }) {
 			setSaved(false);
 		}, 2000); */
     //console.log(editedRecipes);
+    setTimeout(() => {
+      navigate(`/`)
+    }, 6000)
   };
 
   const handleSubmit = (e) => {

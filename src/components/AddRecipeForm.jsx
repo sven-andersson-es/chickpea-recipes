@@ -2,9 +2,12 @@ import { useState } from "react";
 import "./AddRecipeForm.css";
 import IngredientsInput from "./IngredientsInput";
 
+
 function AddRecipeForm({ setRecipes, recipes }) {
 	//console.log(setRecipes);
 	
+	const [saved, setSaved] = useState(false);
+
 	const [title, setTitle] = useState("");
 	const [imageUrl, setImageUrl] = useState("");
 	const [servings, setServings] = useState(0);
@@ -22,6 +25,10 @@ function AddRecipeForm({ setRecipes, recipes }) {
 	const addRecipes = (newRecipe) => {
 		const updateRecipes = [...recipes, newRecipe];
 		setRecipes(updateRecipes);
+		setSaved(true);
+		setTimeout(() => {
+			setSaved(false)
+		}, 4000)
 	};
 
 	const handleSubmit = (e) => {
@@ -52,6 +59,16 @@ function AddRecipeForm({ setRecipes, recipes }) {
 
 	return (
 		<div className="recipe-form">
+		{saved && (
+          <div className="saved">
+		  <div className="saved-message">
+            <h3>Recipe Saved</h3>
+            <div>
+			  <button className="btn" onClick={() => setSaved(false)}>Close</button>
+            </div>
+          </div>
+		  </div>
+        )}
 			<form onSubmit={handleSubmit}>
 				<div className="form-group">
 					<label htmlFor="title">Title</label>
