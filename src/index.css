@@ -94,7 +94,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: display 1s;
+      animation: show 0.3s;
   }
   
   .saved-message {
@@ -111,4 +111,13 @@
       .btn {
           margin: 0 1rem;
       }
+  }
+
+  @keyframes show {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
